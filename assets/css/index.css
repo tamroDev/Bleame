@@ -5,6 +5,7 @@
 @import url("./page/other.css");
 @import url("./global/cart.css");
 @import url("./ultis/arcodion.css");
+@import url("./page/compare.css");
 
 .container-page {
   max-width: 1290px;

@@ -40,7 +40,7 @@
 }
 
 .thumbs-swiper .swiper-slide-active {
-  border: 2px solid #7069bc;
+  border: 2px solid var(--primary-bg-color);
   border-radius: 5px;
 }
 

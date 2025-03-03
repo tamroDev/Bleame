@@ -100,7 +100,7 @@
 }
 
 .nav .highLight {
-  background-color: #2e2a39;
+  background-color: var(--primary-color);
   color: white !important;
   padding: 6px 22px;
   border-radius: 10px;
@@ -120,8 +120,8 @@
 
 .nav .list-link .link-header a {
   text-decoration: none;
-  color: #2e2a39;
-  line-height: 1.6;
+  color: var(--primary-color);
+  line-height: var(--primary-lineHeight);
 }
 
 .bottom-header .logo {
@@ -148,7 +148,7 @@
   position: absolute;
   top: -8px;
   right: -14px;
-  background: #2e2a39;
+  background: var(--primary-color);
   font-size: 9px;
   color: white;
   border-radius: 100%;

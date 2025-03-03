@@ -1,0 +1,155 @@
+.wrapper-compare {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.compare-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.com_left-side {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.com_left-side h2.com_heading {
+  font-size: 26px;
+  line-height: 35px;
+}
+
+.com_left-side h2.com_heading {
+  text-transform: initial;
+  letter-spacing: 0;
+  max-width: 404px;
+  width: 100%;
+  margin: auto auto 15px;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.com_text {
+  color: #2e2a39bf;
+  font-size: 19px;
+  text-align: center;
+}
+
+.com_text p strong {
+  font-weight: 600;
+}
+
+.table_content {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.com_right-side table {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.top_table_content {
+  width: 100%;
+}
+
+.top_table_content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 0;
+}
+
+.top_table_content th.left_top_content {
+  width: 30%;
+}
+
+table:not([class]) th {
+  padding: 1em;
+  width: 20%;
+}
+
+.top_table_content
+  th.bleame.tabletile.border-leftradius.border-rightradius.right_content {
+  padding: 0;
+}
+.top_table_content
+  th.bleame.tabletile.border-leftradius.border-rightradius.right_content {
+  width: 20% !important;
+}
+
+.table_right_content,
+.table_content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.bleameimage.table_right_content img {
+  margin: 0 auto;
+}
+
+.compare-box th p {
+  color: #000;
+  margin-block: 10px !important;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
+}
+
+.compare-box .com_right-side {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.compare-box tr.tablelooprow {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid rgba(246, 246, 244, 0.44);
+  border-radius: 3px 0 0;
+}
+
+.compare-box .tablelooprow td {
+  border: none;
+}
+
+td.tabletile {
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  padding: 15px 10px;
+  color: #fff;
+  font-weight: 600;
+  width: 30%;
+  background-color: #ccbdff;
+}
+
+.tablelooprow td.bleame {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  width: 20%;
+}
+
+.compare-box td.bleame img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+td.tabletile.waxing_content {
+  background-color: #fff;
+  width: 20%;
+}
+
+td.tabletile.waxing_content img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  margin: 0 auto;
+}
