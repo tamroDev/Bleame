@@ -1,0 +1,14 @@
+@import url("reset.css");
+@import url("./global/header.css");
+@import url("./page/productDetail.css");
+@import url("./page/slide.css");
+@import url("./page/other.css");
+@import url("./global/cart.css");
+@import url("./ultis/arcodion.css");
+
+.container-page {
+  max-width: 1290px;
+  padding-inline: 40px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}

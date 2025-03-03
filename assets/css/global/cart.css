@@ -1,0 +1,100 @@
+.cart-container {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.cart-container.show {
+  visibility: visible;
+}
+
+.cart-container.show .coating {
+  opacity: 0.3;
+  visibility: visible;
+}
+
+.cart-container.show .cart {
+  transform: translateX(0) !important;
+  visibility: visible;
+}
+
+.wrapper-cart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+
+.cart-container .coating {
+  background-color: #000000;
+  opacity: 0;
+  visibility: hidden;
+  height: 100%;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  position: absolute;
+  inset: 0;
+}
+
+.cart {
+  background-color: #fff;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: 0.3s linear all;
+}
+
+.cart header {
+  padding: 24px 40px;
+  border-bottom: 1px solid #e0dfe1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart header > div {
+  display: flex;
+  gap: 12px;
+  font-size: 18px;
+}
+
+.cart header .close-btn {
+  height: 26px;
+  width: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart > div {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cart > div p {
+  display: block;
+  width: 100%;
+  padding: 0 40px;
+  color: #2e2a39;
+  line-height: 1.6;
+}
+
+.cart > div a {
+  margin-top: 32px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #6862af;
+  letter-spacing: 1px;
+  padding: 0 35px;
+  border-radius: 10px;
+  font-weight: 700;
+  line-height: 52px;
+}

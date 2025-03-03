@@ -1,0 +1,19 @@
+.wrapper-shopify {
+  padding-block-start: 40px;
+  padding-block-end: 40px;
+}
+
+.shopify-container {
+}
+
+.shopify-section {
+  display: flex;
+}
+
+.text_shopify {
+  flex: 1;
+}
+
+.img-show_shopify {
+  flex: 1;
+}

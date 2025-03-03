@@ -1,0 +1,88 @@
+.product-media {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 36px;
+  position: sticky;
+  top: 135px;
+  align-self: flex-start;
+}
+
+.swiper {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.main-swiper {
+  border-radius: 10px;
+  border: none !important;
+}
+
+.swiper-wrapper {
+  height: auto !important;
+}
+
+.thumbs-swiper .swiper-slide {
+  cursor: pointer;
+  padding: 3px;
+}
+
+.thumbs-swiper .swiper-slide img {
+  height: 81px;
+  width: 81px !important;
+  border-radius: 5px;
+}
+
+.custom-thums {
+  height: auto !important;
+}
+
+.thumbs-swiper .swiper-slide-active {
+  border: 2px solid #7069bc;
+  border-radius: 5px;
+}
+
+.thumbs-swiper {
+  position: relative;
+}
+
+.thumbs-swiper::before,
+.thumbs-swiper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.thumbs-swiper::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.thumbs-swiper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.thumbs-swiper.hide-left::before {
+  opacity: 0;
+}
+
+.thumbs-swiper.hide-right::after {
+  opacity: 0;
+}

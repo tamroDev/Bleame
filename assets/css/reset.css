@@ -1,0 +1,76 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+@font-face {
+  font-family: "HarmoniaSansRegular";
+  src: url("/assets/font/Harmonia-Sans-Font/HarmoniaSansW01-Regular.woff2")
+      format("woff2"),
+    url("/assets/font/Harmonia-Sans-Font/HarmoniaSansW01-Regular.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HarmoniaSansBold";
+  src: url("/assets/font/Harmonia-Sans-Font/HarmoniaSansW01-Bold.woff2")
+      format("woff2"),
+    url("/assets/font/Harmonia-Sans-Font/HarmoniaSansW01-Bold.woff")
+      format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  font-family: "HarmoniaSansRegular", sans-serif;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "HarmoniaSansBold", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
