@@ -1,4 +1,4 @@
-interface Swiper {
+export interface Swiper {
   activeIndex: number;
   isEnd: boolean;
   slides: any[];
