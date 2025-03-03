@@ -153,3 +153,48 @@ td.tabletile.waxing_content img {
   object-fit: cover;
   margin: 0 auto;
 }
+
+.wrapper-lastContent {
+  margin: 48px 0;
+}
+
+.bg-last-content {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.last-content-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.last-content-box .last-content-img,
+.last-content-box .last-content-text {
+  width: 50%;
+}
+
+.last-content-box .last-content-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper-last-content-text {
+  padding: 66px 77px 77px;
+  text-align: left;
+  color: #f4f1ff;
+}
+
+.wrapper-last-content-text h2 {
+  font-size: 50px;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.wrapper-last-content-text > div {
+  font-size: 18px;
+  opacity: 0.8;
+}
+.wrapper-last-content-text > div p {
+}
