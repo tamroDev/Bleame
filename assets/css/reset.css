@@ -48,6 +48,10 @@ button {
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   font-weight: 400;

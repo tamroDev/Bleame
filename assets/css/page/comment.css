@@ -1,5 +1,6 @@
 .wrapper-comment {
   padding: 48px 0;
+  font-family: "Open Sans";
 }
 
 .comment_container {
@@ -180,6 +181,22 @@
   cursor: pointer;
 }
 
+/* ------------------------FORM------------------------ */
+
+.form_comment {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+.form_comment.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .form_comment form {
   border: 1px solid rgba(221, 221, 221, 0.3);
   padding: 15px;
@@ -325,4 +342,193 @@
   padding-inline-start: 35px;
   padding-inline-end: 35px;
   line-height: 2.9;
+  border-radius: 10px;
+}
+
+/* Filter reviews */
+.filter_review {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.filter_review > h1 {
+  color: var(--primary-color);
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.search_group {
+  position: relative;
+  max-width: 435px;
+  margin-top: 15px;
+}
+
+.search_group input {
+  color: #333;
+  position: initial;
+  height: 35px;
+  min-height: 35px;
+  background-color: #fff;
+  line-height: 1.25;
+  text-indent: 0.01px;
+  text-overflow: "";
+  border: 1px solid #ccd6e0 !important;
+  bottom: 12px;
+  appearance: none;
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 99%;
+  padding-left: 27px;
+  padding-right: 50px;
+}
+
+.search_group img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+}
+
+.select_list {
+  display: flex;
+  margin-top: 20px;
+}
+
+.stamped-filter-select {
+  min-width: 200px;
+  padding-right: 55px !important;
+  outline: 0;
+}
+
+.stamped-filter-select {
+  background-position: right -1px center;
+  background-image: url(https://cdn.stamped.io/cdn/images/icon-arrow-down-bg.svg) !important;
+  border: 1px solid #ccd6e0 !important;
+  width: auto;
+  color: #333;
+  position: initial;
+  min-height: 35px;
+  line-height: 1.25;
+  text-indent: 0.01px;
+  text-overflow: "";
+  transition: 0.2sease-in-out;
+  font-weight: 400;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  height: 35px;
+  cursor: pointer;
+  background-size: initial !important;
+  padding: 0 12px !important;
+  appearance: none;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.comment_list {
+  margin-bottom: 30px;
+  padding-top: 25px;
+}
+
+.comment {
+  margin-bottom: 30px;
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.top_comment .author-comment {
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.top_comment h1 {
+  color: var(--primary-color);
+  line-height: 18px;
+  margin-right: 7px;
+}
+
+.top_comment span {
+  color: #1cc286;
+  font-size: 14px;
+}
+
+.top_comment .list_rate_report {
+  justify-content: start !important ;
+  width: max-content;
+}
+
+.comment .stamped-review-options li strong {
+  font-size: 12px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.age-comment {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 20px;
+}
+
+.age-comment h1,
+.age-comment span {
+  font-size: 12px;
+  color: var(--primary-color);
+}
+
+.content_comment h1 {
+  font-size: 15px;
+  line-height: 24px;
+  min-height: 15px;
+  margin: 5px 0 0;
+  padding: 0;
+  border: none;
+  font-weight: 700;
+  text-align: left;
+  color: var(--primary-color);
+}
+
+.content_comment p {
+  font-size: 14px;
+  color: var(--primary-color);
+  line-height: 20px;
+}
+
+.content_comment div {
+  margin-top: 10px;
+}
+
+.content_comment img {
+  height: 130px;
+  margin-right: 10px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+.page,
+.prev,
+.next {
+  padding: 10px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.page.active {
+  text-decoration: underline;
+  font-weight: bold;
 }

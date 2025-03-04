@@ -7,6 +7,8 @@
 @import url("./ultis/arcodion.css");
 @import url("./page/compare.css");
 @import url("./page/comment.css");
+@import url("./page/question.css");
+@import url("./global/footer.css");
 
 .container-page {
   max-width: 1290px;

@@ -7,3 +7,5 @@ import "./ultis/tabAction.js";
 import "./ultis/compareSlide.js";
 import "./ultis/progress.js";
 import "./ultis/renderAuthorReport.js";
+import "./ultis/activeForm.js";
+import "./ultis/renderComment.js";
