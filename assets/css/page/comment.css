@@ -1,0 +1,328 @@
+.wrapper-comment {
+  padding: 48px 0;
+}
+
+.comment_container {
+}
+
+.comment_container .list_rate_comment {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.comment_container .list_rate_comment h1 {
+  font-size: 37px;
+}
+.comment_container .list_star i {
+  font-size: 26px;
+}
+.comment_container .list_rate_comment span {
+  font-size: 15px;
+  font-weight: lighter;
+  color: var(--primary-color);
+}
+
+.list_control_bar {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.stamped-review-options {
+  background: #fafafa;
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 10px;
+  clear: both;
+}
+
+.stamped-review-options ul,
+.stamped-review-content-body,
+.stamped-ugc-modal-caption-options ul {
+  margin: 0;
+  padding: 0;
+}
+.stamped-review-options ul li {
+  width: 20%;
+  margin-right: 20px;
+  list-style: none;
+  display: inline-block;
+}
+.stamped-review-option-title {
+  display: block;
+  padding-bottom: 0;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.stamped-review-option-scale,
+.stamped-review-option-scale-wrapper {
+  background-color: #e5e5e5;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 9px auto;
+  width: 100%;
+  position: relative;
+  height: 9px;
+  border: 1px solid #7c7c7c;
+}
+
+.stamped-review-option-labels {
+  font-size: 11px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: none !important;
+}
+
+.stamped-review-options ul li {
+  width: 20%;
+  margin-right: 20px;
+  list-style: none;
+  display: inline-block;
+}
+
+.stamped-review-option-selected {
+  display: none;
+}
+
+.stamped-review-option-scale i,
+.stamped-review-option-scale-wrapper i {
+  background: #7c7c7c;
+  display: inline-block;
+  width: 1px;
+  height: 8px;
+}
+
+.stamped-review-option-scale i:first-child,
+.stamped-header .stamped-review-option-scale i:nth-child(5),
+.stamped-review-option-scale-wrapper i:first-child,
+.stamped-review-option-scale-wrapper i:nth-child(5) {
+  background: 0 0;
+}
+
+.stamped-review-option-scale span,
+.stamped-review-option-scale-wrapper span {
+  content: "";
+  background: #525252;
+  margin-left: -2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  position: absolute;
+  top: -webkit-calc(50% - 4px);
+  top: calc(50% - 7px);
+}
+
+.stamped-review-option-scale i:nth-child(5) {
+  background: 0 0;
+}
+
+.wrapper-write {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.reviewButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: white;
+  border: 1px solid #d1dae3;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  box-shadow: 2px 3px 5px 0 #8888886b;
+}
+
+.reviewButton .icon img {
+  height: 13px;
+}
+
+.reviewButton:hover {
+  box-shadow: none;
+}
+
+.tab_comment {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  height: 45px;
+}
+
+.tab_comment span {
+  font-weight: 700;
+  border-bottom: 3px solid #000;
+  border-color: #7069bc !important;
+  color: #7069bc !important;
+  display: inline-block;
+  height: 100%;
+  width: auto !important;
+  margin-right: 15px;
+  padding: 6px 10px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form_comment form {
+  border: 1px solid rgba(221, 221, 221, 0.3);
+  padding: 15px;
+  margin: 25px 0 0;
+}
+
+.form_comment .form_group {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form_comment .form_group > label {
+  font-size: 14px;
+  line-height: var(--primary-lineHeight);
+  color: var(--primary-color);
+}
+
+.form_comment .form_group > input {
+  font-weight: 400;
+  margin: 0 0 10px;
+  display: block;
+  width: 100% !important;
+  min-height: 30px;
+  line-height: 30px;
+  outline: none;
+  padding: 0 8px;
+  border: 1px solid #d7d7d7;
+  min-width: 285px;
+}
+
+.form_group textarea {
+  width: 100% !important;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 5px;
+  border: 1px solid #d7d7d7;
+  height: 312px;
+}
+
+.row {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.stamped-form-custom-option-scale {
+  display: inline-block;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  width: max-content;
+}
+
+.stamped-form-custom-option-scale label:first-child {
+  text-align: left;
+}
+
+.stamped-form-custom-option-scale label:nth-child(2) {
+  margin-left: -40px;
+}
+
+.stamped-form-custom-option-scale label:nth-child(4) {
+  margin-right: -40px;
+}
+
+.stamped-form-custom-option-scale label:last-child {
+  text-align: right;
+}
+
+.stamped-form-custom-option-scale label {
+  padding-left: 1px;
+  float: left;
+  width: 100px;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.stamped-form-custom-option-scale input[type="radio"] {
+  display: inline-block;
+  margin: 0 !important;
+}
+
+.stamped-form-custom-option-scale label div {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8em;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 10px;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+.add-photos {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-button {
+  background: #000;
+  color: #fff;
+  width: auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding-inline-start: 35px;
+  padding-inline-end: 35px;
+  line-height: 2.9;
+}
