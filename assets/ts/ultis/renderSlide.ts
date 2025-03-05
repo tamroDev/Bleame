@@ -35,6 +35,7 @@ function renderSlides() {
 
     const thumbSlide = document.createElement("div");
     thumbSlide.classList.add("swiper-slide");
+    thumbSlide.classList.add("product-thumb-img");
     thumbSlide.innerHTML = `<img src="${img.src}" alt="${img.alt} Thumb"/>`;
 
     mainSwiperWrapper.appendChild(mainSlide);

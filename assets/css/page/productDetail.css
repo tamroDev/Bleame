@@ -479,5 +479,29 @@
   }
 }
 
+@media (max-width: 1250px) {
+  .product-detail {
+    gap: 15px;
+  }
+}
+
 @media (max-width: 1200px) {
+  .product-detail {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .product-media {
+    position: relative !important;
+    padding-left: 0 !important;
+    top: 0 !important;
+    width: 100%;
+  }
+
+  .product-content {
+    width: 100%;
+  }
 }

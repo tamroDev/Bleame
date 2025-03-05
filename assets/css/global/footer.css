@@ -170,3 +170,54 @@ footer {
 .payment-methods-list {
   display: flex;
 }
+
+@media (max-width: 1050px) {
+  footer {
+    padding: 42px 0 20px 0;
+  }
+
+  .email-sub h1 {
+    font-size: 35px;
+    margin-bottom: 25px;
+  }
+
+  .field input {
+    height: 35px;
+  }
+}
+
+@media (max-width: 850px) {
+  .email-sub {
+    padding: 0 0 20px 0;
+  }
+  .content-footer {
+    display: flex !important;
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+
+  .footer__item--links,
+  .logo-footer {
+    width: 65%;
+  }
+
+  .end-footer {
+    flex-wrap: wrap;
+  }
+
+  .end-footer .text,
+  .end-footer .footer__payment {
+    width: 100%;
+  }
+
+  .footer__payment {
+    flex: none;
+    margin-top: 20px;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+
+  .footer__payment span {
+    margin-right: 10px;
+  }
+}

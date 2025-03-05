@@ -124,3 +124,33 @@
   font-size: 18px;
   font-weight: lighter;
 }
+
+@media (max-width: 700px) {
+  .questions-container > h1,
+  .container-risk-free > h1,
+  .container-product-end h1 {
+    font-size: 28px;
+  }
+
+  .wrapper-arcodion .title {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+
+  .icon-risk-free {
+    width: 100%;
+  }
+
+  .icon-risk {
+    padding: 0 12px;
+  }
+
+  .icon-risk img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon-risk h1 {
+    font-size: 14px;
+  }
+}

@@ -532,3 +532,47 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
+@media (max-width: 1250px) {
+  .select_list {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .stamped-review-options {
+    padding: 0;
+  }
+  .stamped-review-options ul li {
+    width: 33%;
+  }
+}
+
+@media (max-width: 700px) {
+  .stamped-review-options ul li {
+    width: 60%;
+  }
+
+  .comment .stamped-review-options ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .comment .stamped-review-options ul li {
+    width: 70% !important;
+  }
+
+  .content_comment p {
+    line-height: 18px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stamped-review-options {
+    padding: 10px;
+  }
+  .stamped-review-options ul li {
+    width: 100%;
+  }
+}
