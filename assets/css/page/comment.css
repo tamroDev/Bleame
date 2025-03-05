@@ -512,6 +512,7 @@
 }
 
 .pagination {
+  max-width: 100%;
   display: flex;
   align-items: center;
   font-size: 15px;
@@ -546,6 +547,16 @@
   .stamped-review-options ul li {
     width: 33%;
   }
+
+  .form_group textarea {
+    height: 200px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .form_comment .form_group {
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 700px) {
@@ -574,5 +585,30 @@
   }
   .stamped-review-options ul li {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper-write {
+    justify-content: center;
+  }
+  .row {
+    flex-direction: column;
+  }
+
+  .stamped-form-custom-option-scale label {
+    width: 50px;
+  }
+
+  .stamped-form-custom-option-scale label:nth-child(2) {
+    margin-left: -20px;
+  }
+
+  .stamped-form-custom-option-scale label:nth-child(4) {
+    margin-right: -20px;
+  }
+
+  .stamped-form-custom-option-scale label div {
+    font-size: 0.5em;
   }
 }

@@ -607,7 +607,20 @@
     width: 40%;
   }
 }
+@media (max-width: 768px) {
+  .img_compare {
+    order: 1;
+    width: 100%;
+    height: unset;
+    padding-top: 100%;
+    margin: 10px 0 20px 0;
+  }
 
+  .compare_content .col-1 {
+    order: 2;
+    width: 100%;
+  }
+}
 @media (max-width: 1000px) {
   .shopify-section {
     flex-wrap: wrap;
@@ -783,6 +796,7 @@
 
   .progress-item {
     justify-content: start;
+    flex-wrap: nowrap;
   }
 
   .user_report_item {

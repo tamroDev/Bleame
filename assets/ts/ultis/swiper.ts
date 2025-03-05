@@ -1,90 +1,115 @@
-export interface Swiper {
-  activeIndex: number;
-  isEnd: boolean;
-  slides: any[];
-  params: any;
-  update: () => void;
-  slideTo: (index: number) => void;
-}
-declare const Swiper: {
-  new (container: string, options: any): Swiper;
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const imgThumbnails = document.querySelectorAll<HTMLImageElement>(
+    ".thumbnails .thumbnail"
+  );
+  const mainImages = document.querySelectorAll<HTMLImageElement>(
+    ".image-container .main-image"
+  );
+  const imageContainer =
+    document.querySelector<HTMLDivElement>(".image-container");
+  const thumbnails = document.querySelector<HTMLDivElement>(".thumbnails");
+  const containerSlider =
+    document.querySelector<HTMLDivElement>(".container-slide")?.offsetLeft || 0;
+  const btnZoom = document.querySelector<HTMLDivElement>(".btn-zoom"); // Nút Zoom
 
-document.addEventListener("DOMContentLoaded", function () {
-  const thumbsSwiper = new Swiper(".thumbs-swiper", {
-    spaceBetween: 10,
-    slidesPerView: 5,
-    freeMode: true,
-    watchSlidesProgress: true,
-    slideToClickedSlide: true,
-    centeredSlides: false,
-    on: {
-      slideChange(this: Swiper) {
-        const totalSlides: number = this.slides.length;
-        const activeIndex: number = this.activeIndex;
+  let currentIndex = 0;
 
-        this.params.centeredSlides =
-          activeIndex >= 2 && activeIndex <= totalSlides - 3;
-        this.update();
+  const updateSlider = (index: number): void => {
+    const imageWidth = mainImages[0]?.clientWidth || 0;
+    imageContainer?.scrollTo({ left: index * imageWidth, behavior: "smooth" });
 
-        document
-          .querySelectorAll<HTMLDivElement>(".thumbs-swiper .swiper-slide")
-          .forEach((slide, index) => {
-            slide.classList.toggle(
-              "swiper-slide-active",
-              index === activeIndex
-            );
-          });
+    imgThumbnails.forEach((thumb) => thumb.classList.remove("active"));
+    imgThumbnails[index]?.classList.add("active");
 
-        updateFadingEffect(this);
-      },
-    },
+    const leftSpacing =
+      (imgThumbnails[index]?.offsetLeft || 0) -
+      containerSlider -
+      (thumbnails?.clientWidth || 0) / 2 +
+      (imgThumbnails[index]?.clientWidth || 0) / 2;
+
+    thumbnails?.scrollTo({ left: leftSpacing, behavior: "smooth" });
+  };
+
+  window.addEventListener("load", () => {
+    currentIndex = 0;
+    updateSlider(currentIndex);
   });
 
-  const mainSwiper = new Swiper(".main-swiper", {
-    spaceBetween: 10,
-    thumbs: {
-      swiper: thumbsSwiper,
-    },
-    loop: false,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    on: {
-      slideChange(this: Swiper) {
-        thumbsSwiper.slideTo(this.activeIndex);
-        document
-          .querySelectorAll<HTMLDivElement>(".thumbs-swiper .swiper-slide")
-          .forEach((slide, index) => {
-            slide.classList.toggle(
-              "swiper-slide-active",
-              index === this.activeIndex
-            );
-          });
+  mainImages.forEach((image, index) => {
+    image.addEventListener("mousemove", (e: MouseEvent) => {
+      const { left, width } = image.getBoundingClientRect();
+      const mouseX = e.clientX - left;
 
-        updateFadingEffect(thumbsSwiper);
-      },
-    },
+      image.classList.remove("left-cursor", "right-cursor");
+      image.classList.add(mouseX < width / 2 ? "left-cursor" : "right-cursor");
+    });
+
+    image.addEventListener("click", (e: MouseEvent) => {
+      const { left, width } = image.getBoundingClientRect();
+      const mouseX = e.clientX - left;
+
+      currentIndex =
+        mouseX < width / 2
+          ? Math.max(0, currentIndex - 1)
+          : Math.min(mainImages.length - 1, currentIndex + 1);
+      updateSlider(currentIndex);
+    });
   });
 
-  function updateFadingEffect(swiper: Swiper) {
-    const thumbsContainer = document.querySelector(
-      ".thumbs-swiper"
-    ) as HTMLDivElement;
+  imgThumbnails.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      currentIndex = index;
+      updateSlider(currentIndex);
+    });
+  });
 
-    if (swiper.activeIndex === 0) {
-      thumbsContainer.classList.add("hide-left");
-    } else {
-      thumbsContainer.classList.remove("hide-left");
+  const lightBox = document.querySelector<HTMLDivElement>(".lightBox");
+  const lightBoxMainImg = document.querySelector<HTMLImageElement>(
+    ".lightBox-main-img img"
+  );
+  const closeLightBox =
+    document.querySelector<HTMLDivElement>(".close-lightBox");
+  const btnLeft = document.querySelector<HTMLDivElement>(
+    ".btn-lightBox.btn-left"
+  );
+  const btnRight = document.querySelector<HTMLDivElement>(
+    ".btn-lightBox.btn-right"
+  );
+
+  const updateLightBoxImage = (index: number): void => {
+    if (lightBoxMainImg) lightBoxMainImg.src = mainImages[index]?.src || "";
+  };
+
+  // 🚀 **Chỉ mở lightbox khi nhấn vào nút Zoom**
+  btnZoom?.addEventListener("click", () => {
+    updateLightBoxImage(currentIndex);
+    lightBox?.classList.add("openLightBox");
+  });
+
+  closeLightBox?.addEventListener("click", () => {
+    lightBox?.classList.remove("openLightBox");
+  });
+
+  lightBox?.addEventListener("click", (e: MouseEvent) => {
+    if (
+      !(e.target as HTMLElement).closest(".lightBox-main-img") &&
+      !(e.target as HTMLElement).closest(".btn-lightBox")
+    ) {
+      lightBox?.classList.remove("openLightBox");
     }
+  });
 
-    if (swiper.isEnd) {
-      thumbsContainer.classList.add("hide-right");
-    } else {
-      thumbsContainer.classList.remove("hide-right");
+  btnLeft?.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateLightBoxImage(currentIndex);
     }
-  }
+  });
 
-  updateFadingEffect(thumbsSwiper);
+  btnRight?.addEventListener("click", () => {
+    if (currentIndex < mainImages.length - 1) {
+      currentIndex++;
+      updateLightBoxImage(currentIndex);
+    }
+  });
 });

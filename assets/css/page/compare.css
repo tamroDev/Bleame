@@ -243,4 +243,8 @@ td.tabletile.waxing_content img {
   .wrapper-last-content-text > div {
     font-size: 14px;
   }
+
+  .compare-box .com_right-side {
+    padding-left: 0;
+  }
 }

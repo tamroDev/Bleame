@@ -11,8 +11,24 @@
 @import url("./global/footer.css");
 
 .container-page {
-  max-width: 1290px;
-  padding-inline: 40px;
+  max-width: 640px;
+  padding: 0 16px;
   margin-inline-start: auto;
   margin-inline-end: auto;
+}
+@media (min-width: 768px) {
+  .container-page {
+    max-width: 768px;
+    padding: 0 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
+}
+@media (min-width: 769px) {
+  .container-page {
+    max-width: 1290px;
+    padding: 0 40px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
 }

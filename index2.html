@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider Trượt Đơn Giản</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      .slider-container {
+        width: 100%;
+        max-width: 800px;
+        height: 300px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .slider-track {
+        display: flex;
+        position: absolute;
+        width: fit-content;
+        height: 100%;
+      }
+
+      .slide {
+        width: 400px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-container" id="slider-container">
+      <div class="slider-track" id="slider-track">
+        <div class="slide">
+          <video src="/assets/images/arm.mp4"></video>
+        </div>
+        <div class="slide">
+          <img src="/assets/images/product-2.webp" alt="Hình ảnh 2" />
+        </div>
+        <div class="slide">
+          <img src="/assets/images/product-3.webp" alt="Hình ảnh 3" />
+        </div>
+        <div class="slide">
+          <img src="/assets/images/product-4.webp" alt="Hình ảnh 4" />
+        </div>
+        <div class="slide">
+          <img src="/assets/images/product-5.webp" alt="Hình ảnh 5" />
+        </div>
+        <!-- Các slide clone sẽ được thêm bằng JavaScript -->
+      </div>
+    </div>
+
+    <script>
+      const sliderContainer = document.getElementById("slider-container");
+      const sliderTrack = document.getElementById("slider-track");
+      const originalSlides = document.querySelectorAll(".slide");
+
+      let isAnimating = true;
+      let isPausedByHover = false;
+      let animationId;
+      let currentPosition = 0;
+      let scrollSpeed = 1; // Tốc độ cố định là 1
+
+      // Clone slides để tạo hiệu ứng vô hạn
+      function cloneSlides() {
+        originalSlides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          sliderTrack.appendChild(clone);
+        });
+
+        // Clone thêm một lần nữa để đảm bảo đủ nội dung khi scroll
+        originalSlides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          sliderTrack.appendChild(clone);
+        });
+      }
+
+      // Gọi hàm clone slides
+      cloneSlides();
+
+      // Tính toán chiều rộng tổng của các slide gốc
+      const calculateOriginalWidth = () => {
+        let width = 0;
+        originalSlides.forEach((slide) => {
+          width +=
+            slide.offsetWidth + parseInt(getComputedStyle(slide).marginRight);
+        });
+        return width;
+      };
+
+      // Hàm tạo hiệu ứng scroll liên tục
+      function animateScroll() {
+        if (!isAnimating) return;
+
+        currentPosition -= scrollSpeed;
+        const originalWidth = calculateOriginalWidth();
+
+        // Reset position khi đã scroll qua hết một lần các slide gốc
+        if (Math.abs(currentPosition) >= originalWidth) {
+          currentPosition += originalWidth;
+        }
+
+        sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+        animationId = requestAnimationFrame(animateScroll);
+      }
+
+      // Bắt đầu animation khi trang tải xong
+      animateScroll();
+
+      // Thêm sự kiện hover vào slider container
+      sliderContainer.addEventListener("mouseenter", function () {
+        isPausedByHover = true;
+        updateAnimationState();
+      });
+
+      sliderContainer.addEventListener("mouseleave", function () {
+        isPausedByHover = false;
+        updateAnimationState();
+      });
+
+      // Cập nhật trạng thái animation dựa trên hover
+      function updateAnimationState() {
+        const shouldAnimate = !isPausedByHover;
+
+        if (shouldAnimate && !isAnimating) {
+          isAnimating = true;
+          animateScroll();
+        } else if (!shouldAnimate && isAnimating) {
+          isAnimating = false;
+          cancelAnimationFrame(animationId);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -22,6 +22,22 @@
     />
   </head>
   <body>
+    <div class="lightBox">
+      <div class="wrapper-lighBox">
+        <div class="btn-lightBox btn-left">
+          <img src="./assets/images/back-16px.png" alt="" />
+        </div>
+        <div class="lightBox-main-img">
+          <img src="./assets/images/product-1.webp" alt="" />
+        </div>
+        <div class="btn-lightBox btn-right">
+          <img src="./assets/images/next-16px.png" alt="" />
+        </div>
+        <div class="close-lightBox">
+          <img src="/assets/images/close.png" alt="" />
+        </div>
+      </div>
+    </div>
     <div class="product-fixed">
       <div class="container-page product-fixed-container">
         <div class="product-item">
@@ -315,12 +331,132 @@
       <div class="container-page product-container">
         <section class="product-detail">
           <div class="product-media">
-            <div class="swiper main-swiper">
-              <div class="swiper-wrapper"></div>
-            </div>
+            <div class="container-slide">
+              <div class="slider" id="slider">
+                <div class="btn-zoom">
+                  <img src="/assets/images/loupe.png" alt="" />
+                </div>
+                <div class="image-container" id="imageContainer">
+                  <img
+                    class="main-image"
+                    src="/assets/images/product.webp"
+                    alt="1"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-1.webp"
+                    alt="1"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-2.webp"
+                    alt="2"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-3.webp"
+                    alt="3"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-4.webp"
+                    alt="4"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-5.webp"
+                    alt="1"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-6.webp"
+                    alt="2"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-7.webp"
+                    alt="3"
+                  />
+                  <img
+                    class="main-image"
+                    src="/assets/images/product-8.webp"
+                    alt="4"
+                  />
+                </div>
+              </div>
+              <div class="thumbnails">
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail active"
+                    src="/assets/images/product.webp"
+                    alt="1"
+                  />
+                </div>
 
-            <div class="swiper thumbs-swiper custom-thums">
-              <div class="swiper-wrapper"></div>
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-1.webp"
+                    alt="1"
+                  />
+                </div>
+
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-2.webp"
+                    alt="2"
+                  />
+                </div>
+
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-3.webp"
+                    alt="3"
+                  />
+                </div>
+
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-4.webp"
+                    alt="4"
+                  />
+                </div>
+
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-5.webp"
+                    alt="1"
+                  />
+                </div>
+
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-6.webp"
+                    alt="2"
+                  />
+                </div>
+
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-7.webp"
+                    alt="3"
+                  />
+                </div>
+
+                <div class="wrapper-thumbnail">
+                  <img
+                    class="thumbnail"
+                    src="/assets/images/product-8.webp"
+                    alt="4"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div class="product-content">
@@ -591,7 +727,7 @@
                 <span>Rated 4.8/5 by 1,319+ Happy Customers</span>
               </div>
             </div>
-            <div class="img-show_shopify">
+            <!-- <div class="img-show_shopify">
               <div class="swiper-container swiper-shopify">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -673,7 +809,7 @@
                   });
                 </script>
               </div>
-            </div>
+            </div> -->
           </section>
         </div>
       </div>
@@ -799,7 +935,7 @@
         <section class="section_future">
           <div class="container-page future_container">
             <div class="future_video">
-              <div class="video_box">
+              <!-- <div class="video_box">
                 <div class="score_video">
                   <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
@@ -810,7 +946,6 @@
                               <video
                                 class="future_video_dom"
                                 src="/assets/images/future_4.mp4"
-                                muted
                                 loop
                               ></video>
                               <div class="play-button-wrapper">
@@ -836,7 +971,6 @@
                               <video
                                 class="future_video_dom"
                                 src="/assets/images/future_1.mp4"
-                                muted
                                 loop
                               ></video>
                               <div class="play-button-wrapper">
@@ -862,7 +996,6 @@
                               <video
                                 class="future_video_dom"
                                 src="/assets/images/future_2.mp4"
-                                muted
                                 loop
                               ></video>
                               <div class="play-button-wrapper">
@@ -888,7 +1021,6 @@
                               <video
                                 class="future_video_dom"
                                 src="/assets/images/future_3.mp4"
-                                muted
                                 loop
                               ></video>
                               <div class="play-button-wrapper">
@@ -923,7 +1055,7 @@
                     </script>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="text_box">
                 <h3>The Future Is Hair-Free! 💜</h3>
                 <div class="progress-container">

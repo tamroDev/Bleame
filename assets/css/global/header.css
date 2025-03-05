@@ -197,6 +197,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 20px;
+  gap: 20px;
 }
 
 .nav-hidden .menu-item .menu-img {
@@ -235,6 +236,7 @@
 
 .menu-service .item-service h1 {
   font-size: 14px;
+  text-align: center;
 }
 
 .menu-social,
@@ -293,4 +295,10 @@
   }
 
   /* .nav-hidden; */
+}
+
+@media (max-width: 500px) {
+  .top-header .wrapper-header h1 {
+    font-size: 15px;
+  }
 }
