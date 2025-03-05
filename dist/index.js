@@ -10,3 +10,5 @@ import "./ultis/renderAuthorReport.js";
 import "./ultis/activeForm.js";
 import "./ultis/renderComment.js";
 import "./ultis/openMenu.js";
+import "./ultis/playVideo.js";
+import "./ultis/fixedProduct.js";

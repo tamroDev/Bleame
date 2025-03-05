@@ -781,6 +781,10 @@
     width: 100% !important;
   }
 
+  .progress-item {
+    justify-content: start;
+  }
+
   .user_report_item {
     width: 100%;
     margin-left: auto;
