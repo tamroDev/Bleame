@@ -1,7 +1,7 @@
 /* -------------------- Notifacion -------------------------------- */
 
 .content {
-  margin-top: 170px;
+  margin-top: 160px;
 }
 
 .wrapper-notifacion {
@@ -477,4 +477,7 @@
     transform: scale(1.75, 1.75);
     opacity: 0;
   }
+}
+
+@media (max-width: 1200px) {
 }

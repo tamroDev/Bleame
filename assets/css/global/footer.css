@@ -143,3 +143,30 @@ footer {
   padding-top: 50px;
   color: rgb(244, 241, 255);
 }
+
+.end-footer {
+  margin-top: 50px;
+  padding-top: 50px;
+  display: flex;
+  color: #f4f1ff;
+  font-size: 14px;
+}
+
+.end-footer text {
+  width: max-content;
+}
+
+.footer__payment {
+  display: flex;
+  flex: 1;
+  justify-content: end;
+  align-items: center;
+}
+
+.footer__payment span {
+  margin-right: 20px;
+}
+
+.payment-methods-list {
+  display: flex;
+}
