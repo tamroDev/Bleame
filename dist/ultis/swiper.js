@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (lightBoxMainImg)
             lightBoxMainImg.src = ((_a = mainImages[index]) === null || _a === void 0 ? void 0 : _a.src) || "";
     };
-    // 🚀 **Chỉ mở lightbox khi nhấn vào nút Zoom**
     btnZoom === null || btnZoom === void 0 ? void 0 : btnZoom.addEventListener("click", () => {
         updateLightBoxImage(currentIndex);
         lightBox === null || lightBox === void 0 ? void 0 : lightBox.classList.add("openLightBox");
@@ -83,4 +82,108 @@ document.addEventListener("DOMContentLoaded", () => {
             updateLightBoxImage(currentIndex);
         }
     });
+});
+// SLide Auto Infinity
+document.addEventListener("DOMContentLoaded", () => {
+    const sliderContainer = document.getElementById("slider-container");
+    const sliderTrack = document.getElementById("slider-track");
+    const originalSlides = Array.from(document.querySelectorAll(".slide"));
+    let isAnimating = true;
+    let isPausedByHover = false;
+    let animationId;
+    let currentPosition = 0;
+    const scrollSpeed = 0.4;
+    let totalWidth = 0;
+    const cloneSlides = (times = 2) => {
+        for (let i = 0; i < times; i++) {
+            originalSlides.forEach((slide) => {
+                const clone = slide.cloneNode(true);
+                sliderTrack.appendChild(clone);
+            });
+        }
+        updateTotalWidth();
+    };
+    const updateTotalWidth = () => {
+        totalWidth = Array.from(sliderTrack.children).reduce((width, slide) => {
+            return (width +
+                slide.offsetWidth +
+                parseInt(getComputedStyle(slide).marginRight));
+        }, 0);
+    };
+    cloneSlides();
+    const animateScroll = () => {
+        if (!isAnimating)
+            return;
+        currentPosition -= scrollSpeed;
+        if (Math.abs(currentPosition) >= totalWidth / 2) {
+            cloneSlides(1);
+        }
+        sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+        animationId = requestAnimationFrame(animateScroll);
+    };
+    animateScroll();
+    sliderContainer.addEventListener("mouseenter", () => {
+        isPausedByHover = true;
+        updateAnimationState();
+    });
+    sliderContainer.addEventListener("mouseleave", () => {
+        isPausedByHover = false;
+        updateAnimationState();
+    });
+    const updateAnimationState = () => {
+        if (!isPausedByHover && !isAnimating) {
+            isAnimating = true;
+            animateScroll();
+        }
+        else if (isPausedByHover && isAnimating) {
+            isAnimating = false;
+            cancelAnimationFrame(animationId);
+        }
+    };
+});
+// Slide Drag
+document.addEventListener("DOMContentLoaded", () => {
+    const sliderContainer = document.querySelector(".swiper");
+    const sliderTrack = document.querySelector(".swiper-wrapper");
+    const slides = Array.from(document.querySelectorAll(".swiper-slide"));
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    if (sliderContainer && sliderTrack) {
+        sliderContainer.style.overflow = "hidden";
+        sliderContainer.style.display = "flex";
+        sliderContainer.style.alignItems = "center";
+        sliderContainer.style.userSelect = "none";
+        sliderTrack.style.display = "flex";
+        sliderTrack.style.gap = "10px";
+        slides.forEach((slide) => {
+            const clone = slide.cloneNode(true);
+            sliderTrack.appendChild(clone);
+        });
+        sliderContainer.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            startX = e.pageX - sliderContainer.offsetLeft;
+            scrollLeft = sliderContainer.scrollLeft;
+        });
+        sliderContainer.addEventListener("mouseleave", () => {
+            isDragging = false;
+        });
+        sliderContainer.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+        sliderContainer.addEventListener("mousemove", (e) => {
+            if (!isDragging)
+                return;
+            e.preventDefault();
+            const x = e.pageX - sliderContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            sliderContainer.scrollLeft = scrollLeft - walk;
+            if (sliderContainer.scrollLeft <= 0) {
+                sliderContainer.scrollLeft = sliderContainer.scrollWidth / 2;
+            }
+            if (sliderContainer.scrollLeft >= sliderContainer.scrollWidth / 2) {
+                sliderContainer.scrollLeft = 0;
+            }
+        });
+    }
 });

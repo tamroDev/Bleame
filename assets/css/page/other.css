@@ -42,48 +42,37 @@
   height: 52px !important;
 }
 
-.img-show_shopify {
+.slider-container {
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex: 1;
-  overflow: hidden;
-  white-space: nowrap;
-  border-radius: 10px;
 }
 
-.img-show_shopify .slide_shopify {
+.slider-track {
   display: flex;
-  gap: 10px;
-  width: max-content;
+  position: absolute;
+  width: fit-content;
+  height: 100%;
 }
 
-.img-show_shopify .slide_shopify > div {
-  flex-shrink: 0;
-  width: 200px;
-  height: auto;
+.slide {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
 }
 
-.img-show_shopify .video {
+.slide img,
+.slide video {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-}
-
-.img-show_shopify .swiper-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.img-show_shopify .swiper-slide {
-  width: auto;
-  flex-shrink: 0;
-}
-
-.img-show_shopify .swiper-slide img,
-.img-show_shopify .swiper-slide video {
-  width: 283px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  pointer-events: none;
+  border-radius: 12px;
 }
 
 /*--------------------------- Wrapper action ------------------------------ */
@@ -622,13 +611,35 @@
   }
 }
 @media (max-width: 1000px) {
+  .wrapper-shopify {
+    padding: 0;
+  }
   .shopify-section {
-    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .slider-track {
+    height: auto;
+  }
+
+  .text_shopify,
+  .slider-container {
+    flex: auto;
+    overflow: visible;
   }
 
   .text_shopify {
-    flex: auto;
-    order: 1;
+    padding: 30px;
+  }
+
+  .slide {
+    width: 200px;
+  }
+
+  .slide img,
+  .slide video {
+    height: 400px;
   }
 
   .text_shopify h1 {
@@ -643,13 +654,8 @@
     flex-wrap: wrap;
   }
 
-  .img-show_shopify {
-    flex: auto;
-  }
-
-  .img-show_shopify video,
-  .img-show_shopify img {
-    width: 372px !important;
+  .wrapper-action {
+    padding: 0;
   }
 
   .tab-action {
@@ -783,6 +789,7 @@
 @media (max-width: 650px) {
   .future_container .future_video {
     flex-wrap: wrap;
+    overflow: hidden;
   }
 
   .video_box {

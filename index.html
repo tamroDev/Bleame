@@ -67,60 +67,111 @@
       <div class="wrapper-cart">
         <span class="coating"></span>
         <div class="cart">
-          <header>
-            <div>
-              <svg
-                focusable="false"
-                width="21"
-                height="20"
-                class="icon icon--header-shopping-cart"
-                viewBox="0 0 21 20"
+          <div class="cart-product">
+            <header>
+              <div>
+                <svg
+                  focusable="false"
+                  width="21"
+                  height="20"
+                  class="icon icon--header-shopping-cart"
+                  viewBox="0 0 21 20"
+                >
+                  <path
+                    d="M0 1H4L5 11H17L19 4H8"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></path>
+                  <circle
+                    cx="6"
+                    cy="17"
+                    r="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></circle>
+                  <circle
+                    cx="16"
+                    cy="17"
+                    r="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></circle>
+                </svg>
+                <h1>Your Cart</h1>
+              </div>
+              <button class="close-btn">
+                <svg
+                  focusable="false"
+                  width="14"
+                  height="14"
+                  class="icon icon--close"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    d="M13 13L1 1M13 1L1 13"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                  ></path>
+                </svg>
+              </button>
+            </header>
+            <div class="wrapper-progess-cart">
+              <span class="drawer__subtitle"
+                >Excellent choice! Here are your products:</span
               >
-                <path
-                  d="M0 1H4L5 11H17L19 4H8"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                ></path>
-                <circle
-                  cx="6"
-                  cy="17"
-                  r="2"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                ></circle>
-                <circle
-                  cx="16"
-                  cy="17"
-                  r="2"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                ></circle>
-              </svg>
-              <h1>Your Cart</h1>
+              <span class="shipping-bar__progress"></span>
+              <span class="shipping-bar__text text--small"
+                >You unlocked free shipping!</span
+              >
             </div>
-            <button class="close-btn">
+            <div class="cart-empty">
+              <p>Your cart is empty</p>
+              <a href="#">Start Shopping</a>
+            </div>
+            <div class="product-cart"></div>
+          </div>
+          <div class="final-cart">
+            <div class="text-final">
+              <h3>Shipping</h3>
+              <p class="ship-price" style="color: #31943a">Free</p>
+            </div>
+            <div class="text-final">
+              <h3>Total</h3>
+              <p class="total-price"></p>
+            </div>
+            <button class="addToCart">
               <svg
-                focusable="false"
-                width="14"
-                height="14"
-                class="icon icon--close"
-                viewBox="0 0 14 14"
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="512.000000pt"
+                height="512.000000pt"
+                viewBox="0 0 512.000000 512.000000"
+                preserveAspectRatio="xMidYMid meet"
               >
-                <path
-                  d="M13 13L1 1M13 1L1 13"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  fill="none"
-                ></path>
+                <g
+                  transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                  fill="#fff"
+                  stroke="none"
+                >
+                  <path
+                    d="M2375 5105 c-627 -88 -1110 -588 -1175 -1216 -5 -56 -10 -276 -10
+                -490 l0 -389 -147 0 c-134 0 -153 -2 -199 -24 -58 -27 -120 -94 -134 -145 -6
+                -23 -10 -510 -10 -1341 l0 -1305 24 -51 c13 -28 41 -65 62 -82 80 -66 -41 -62
+                1774 -62 1815 0 1694 -4 1774 62 21 17 49 54 62 82 l24 51 0 1305 c0 831 -4
+                1318 -10 1341 -14 51 -76 118 -134 145 -46 22 -65 24 -198 24 l-148 0 0 389
+                c0 214 -5 434 -10 490 -79 769 -783 1323 -1545 1216z m363 -511 c285 -58 528
+                -269 632 -548 46 -121 50 -168 50 -613 l0 -423 -860 0 -860 0 0 423 c0 445 4
+                492 50 613 103 276 344 487 625 547 94 21 267 21 363 1z"
+                  ></path>
+                </g>
               </svg>
+              <span>CONTINUE TO SAFE CHECKOUT</span>
             </button>
-          </header>
-          <div>
-            <p>Your cart is empty</p>
-            <a href="#">Start Shopping</a>
+            <img loading="lazy" src="/assets/images/payment-list.webp" alt="" />
           </div>
         </div>
       </div>
@@ -727,89 +778,72 @@
                 <span>Rated 4.8/5 by 1,319+ Happy Customers</span>
               </div>
             </div>
-            <!-- <div class="img-show_shopify">
-              <div class="swiper-container swiper-shopify">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="/assets/images/shopify-1.webp"
-                      alt=""
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <video
-                      autoplay
-                      loop
-                      muted
-                      playsinline
-                      preload="none"
-                      src="assets/images/shopify-2.mp4"
-                    ></video>
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="/assets/images/shopify-3.webp"
-                      alt=""
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="/assets/images/shopify-7.webp"
-                      alt=""
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <video
-                      autoplay
-                      loop
-                      muted
-                      playsinline
-                      preload="none"
-                      src="assets/images/shopify-4.mp4"
-                    ></video>
-                  </div>
-                  <div class="swiper-slide">
-                    <video
-                      autoplay
-                      loop
-                      muted
-                      playsinline
-                      preload="none"
-                      src="assets/images/shopify-5.mp4"
-                    ></video>
-                  </div>
-                  <div class="swiper-slide">
-                    <video
-                      autoplay
-                      loop
-                      muted
-                      playsinline
-                      preload="none"
-                      src="assets/images/shopify-6.mp4"
-                    ></video>
-                  </div>
+
+            <div class="slider-container" id="slider-container">
+              <div class="slider-track" id="slider-track">
+                <div class="slide">
+                  <img
+                    loading="lazy"
+                    src="/assets/images/shopify-1.webp"
+                    alt=""
+                  />
                 </div>
-                <script>
-                  document.addEventListener("DOMContentLoaded", function () {
-                    var swiper = new Swiper(".swiper-shopify", {
-                      slidesPerView: "auto",
-                      spaceBetween: 20,
-                      loop: true,
-                      speed: 6000,
-                      autoplay: {
-                        delay: 0,
-                        disableOnInteraction: false,
-                        reverseDirection: false,
-                      },
-                      rtl: true,
-                    });
-                  });
-                </script>
+                <div class="slide">
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="none"
+                    src="assets/images/shopify-2.mp4"
+                  ></video>
+                </div>
+                <div class="slide">
+                  <img
+                    loading="lazy"
+                    src="/assets/images/shopify-3.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    loading="lazy"
+                    src="/assets/images/shopify-7.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="none"
+                    src="assets/images/shopify-4.mp4"
+                  ></video>
+                </div>
+                <div class="slide">
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="none"
+                    src="assets/images/shopify-5.mp4"
+                  ></video>
+                </div>
+                <div class="slide">
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="none"
+                    src="assets/images/shopify-6.mp4"
+                  ></video>
+                </div>
               </div>
-            </div> -->
+            </div>
           </section>
         </div>
       </div>
@@ -935,7 +969,7 @@
         <section class="section_future">
           <div class="container-page future_container">
             <div class="future_video">
-              <!-- <div class="video_box">
+              <div class="video_box">
                 <div class="score_video">
                   <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
@@ -1041,21 +1075,70 @@
                       </div>
                     </div>
                     <script>
-                      document.addEventListener("DOMContentLoaded", () => {
-                        const swiper = new Swiper(".mySwiper", {
-                          slidesPerView: 2,
-                          spaceBetween: 10,
-                          loop: true,
-                          navigation: {
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                          },
-                        });
+                      const sliderContainer = document.querySelector(".swiper");
+                      const sliderTrack =
+                        document.querySelector(".swiper-wrapper");
+                      const slides = Array.from(
+                        document.querySelectorAll(".swiper-slide")
+                      );
+
+                      let isDragging = false;
+                      let startX = 0;
+                      let scrollLeft = 0;
+
+                      sliderContainer.style.overflow = "hidden";
+                      sliderContainer.style.cursor = "grab";
+                      sliderContainer.style.display = "flex";
+                      sliderContainer.style.alignItems = "center";
+                      sliderContainer.style.userSelect = "none";
+
+                      sliderTrack.style.display = "flex";
+                      sliderTrack.style.gap = "10px";
+
+                      slides.forEach((slide) => {
+                        const clone = slide.cloneNode(true);
+                        sliderTrack.appendChild(clone);
+                      });
+
+                      sliderContainer.addEventListener("mousedown", (e) => {
+                        isDragging = true;
+                        startX = e.pageX - sliderContainer.offsetLeft;
+                        scrollLeft = sliderContainer.scrollLeft;
+                        sliderContainer.style.cursor = "grabbing";
+                      });
+
+                      sliderContainer.addEventListener("mouseleave", () => {
+                        isDragging = false;
+                        sliderContainer.style.cursor = "grab";
+                      });
+
+                      sliderContainer.addEventListener("mouseup", () => {
+                        isDragging = false;
+                        sliderContainer.style.cursor = "grab";
+                      });
+
+                      sliderContainer.addEventListener("mousemove", (e) => {
+                        if (!isDragging) return;
+                        e.preventDefault();
+                        const x = e.pageX - sliderContainer.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        sliderContainer.scrollLeft = scrollLeft - walk;
+
+                        if (sliderContainer.scrollLeft <= 0) {
+                          sliderContainer.scrollLeft =
+                            sliderContainer.scrollWidth / 2;
+                        }
+                        if (
+                          sliderContainer.scrollLeft >=
+                          sliderContainer.scrollWidth / 2
+                        ) {
+                          sliderContainer.scrollLeft = 0;
+                        }
                       });
                     </script>
                   </div>
                 </div>
-              </div> -->
+              </div>
               <div class="text_box">
                 <h3>The Future Is Hair-Free! 💜</h3>
                 <div class="progress-container">
@@ -2433,6 +2516,5 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="./dist/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>

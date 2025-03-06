@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (lightBoxMainImg) lightBoxMainImg.src = mainImages[index]?.src || "";
   };
 
-  // 🚀 **Chỉ mở lightbox khi nhấn vào nút Zoom**
   btnZoom?.addEventListener("click", () => {
     updateLightBoxImage(currentIndex);
     lightBox?.classList.add("openLightBox");
@@ -112,4 +111,136 @@ document.addEventListener("DOMContentLoaded", () => {
       updateLightBoxImage(currentIndex);
     }
   });
+});
+
+// SLide Auto Infinity
+document.addEventListener("DOMContentLoaded", () => {
+  const sliderContainer = document.getElementById(
+    "slider-container"
+  ) as HTMLElement;
+  const sliderTrack = document.getElementById("slider-track") as HTMLElement;
+  const originalSlides = Array.from(
+    document.querySelectorAll(".slide")
+  ) as HTMLElement[];
+
+  let isAnimating = true;
+  let isPausedByHover = false;
+  let animationId: number;
+  let currentPosition = 0;
+  const scrollSpeed = 0.4;
+  let totalWidth = 0;
+
+  const cloneSlides = (times = 2): void => {
+    for (let i = 0; i < times; i++) {
+      originalSlides.forEach((slide) => {
+        const clone = slide.cloneNode(true) as HTMLElement;
+        sliderTrack.appendChild(clone);
+      });
+    }
+    updateTotalWidth();
+  };
+
+  const updateTotalWidth = () => {
+    totalWidth = Array.from(sliderTrack.children).reduce((width, slide) => {
+      return (
+        width +
+        (slide as HTMLElement).offsetWidth +
+        parseInt(getComputedStyle(slide as HTMLElement).marginRight)
+      );
+    }, 0);
+  };
+
+  cloneSlides();
+
+  const animateScroll = (): void => {
+    if (!isAnimating) return;
+
+    currentPosition -= scrollSpeed;
+
+    if (Math.abs(currentPosition) >= totalWidth / 2) {
+      cloneSlides(1);
+    }
+
+    sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+    animationId = requestAnimationFrame(animateScroll);
+  };
+
+  animateScroll();
+
+  sliderContainer.addEventListener("mouseenter", () => {
+    isPausedByHover = true;
+    updateAnimationState();
+  });
+
+  sliderContainer.addEventListener("mouseleave", () => {
+    isPausedByHover = false;
+    updateAnimationState();
+  });
+
+  const updateAnimationState = (): void => {
+    if (!isPausedByHover && !isAnimating) {
+      isAnimating = true;
+      animateScroll();
+    } else if (isPausedByHover && isAnimating) {
+      isAnimating = false;
+      cancelAnimationFrame(animationId);
+    }
+  };
+});
+
+// Slide Drag
+document.addEventListener("DOMContentLoaded", () => {
+  const sliderContainer = document.querySelector(".swiper") as HTMLElement;
+  const sliderTrack = document.querySelector(".swiper-wrapper") as HTMLElement;
+  const slides = Array.from(
+    document.querySelectorAll(".swiper-slide")
+  ) as HTMLElement[];
+
+  let isDragging = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  if (sliderContainer && sliderTrack) {
+    sliderContainer.style.overflow = "hidden";
+    sliderContainer.style.display = "flex";
+    sliderContainer.style.alignItems = "center";
+    sliderContainer.style.userSelect = "none";
+
+    sliderTrack.style.display = "flex";
+    sliderTrack.style.gap = "10px";
+
+    slides.forEach((slide) => {
+      const clone = slide.cloneNode(true) as HTMLElement;
+      sliderTrack.appendChild(clone);
+    });
+
+    sliderContainer.addEventListener("mousedown", (e: MouseEvent) => {
+      isDragging = true;
+      startX = e.pageX - sliderContainer.offsetLeft;
+      scrollLeft = sliderContainer.scrollLeft;
+    });
+
+    sliderContainer.addEventListener("mouseleave", () => {
+      isDragging = false;
+    });
+
+    sliderContainer.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+
+    sliderContainer.addEventListener("mousemove", (e: MouseEvent) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - sliderContainer.offsetLeft;
+      const walk = (x - startX) * 2;
+      sliderContainer.scrollLeft = scrollLeft - walk;
+
+      if (sliderContainer.scrollLeft <= 0) {
+        sliderContainer.scrollLeft = sliderContainer.scrollWidth / 2;
+      }
+      if (sliderContainer.scrollLeft >= sliderContainer.scrollWidth / 2) {
+        sliderContainer.scrollLeft = 0;
+      }
+    });
+  }
 });
