@@ -11,7 +11,6 @@ if (cartContainer && btnOpenCart && coating && btnClose) {
     [btnClose, coating].forEach((el) => {
         el.addEventListener("click", () => {
             cartContainer.classList.remove("show");
-            document.body.style.overflow = "auto";
         });
     });
 }
